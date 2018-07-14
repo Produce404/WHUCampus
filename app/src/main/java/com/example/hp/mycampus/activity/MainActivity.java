@@ -87,6 +87,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //设置备忘录按钮的监听
+        select_lost=(CardView) findViewById(R.id.remind);
+        select_lost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //跳转
+                Intent intent = new Intent(MainActivity.this, TimeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
 
