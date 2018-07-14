@@ -121,8 +121,8 @@ public class InfoUtil {
                 url = url.substring(url.indexOf("('") + 2);
                 url = url.substring(0, url.indexOf("'"));
 
-                url_lessons = "http://210.42.121.241" + url/*+"&year=2018&term=%C9%CF"*/;
-                if (lessons.isEmpty())
+                url_lessons = "http://210.42.121.241" + url+"&year=2018&term=%C9%CF";
+
                     lessons = dealWithLessons(url_lessons);
                 if (scores.isEmpty())
                     scores = dealWithScores();
