@@ -27,7 +27,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha3'
     implementation files('libs/jsoup-1.8.3.jar')
     implementation 'androidx.cardview:cardview:1.0.0-alpha1'
-    compile 'androidx.recyclerview:recyclerview:1.0.0-beta01'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0-beta01'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
     implementation 'com.google.android.material:material:1.0.0-alpha1'
 
