@@ -21,6 +21,7 @@
         <activity android:name=".activity.ScoreActivity" />
         <activity android:name=".activity.ScoreShowActivity" />
         <activity android:name=".activity.NewsActivity" />
+        <activity android:name=".activity.ExpressActivity" />
         <activity android:name=".activity.AddTimeActivity" />
         <activity android:name=".activity.TimeActivity" />
         <activity android:name=".activity.NewsShowActivity" />

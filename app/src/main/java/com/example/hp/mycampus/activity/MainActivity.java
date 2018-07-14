@@ -76,6 +76,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //设置失物招领按钮的监听
+        select_lost=(CardView) findViewById(R.id.post);
+        select_lost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //跳转
+                Intent intent = new Intent(MainActivity.this, ExpressActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
 

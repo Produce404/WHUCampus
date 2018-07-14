@@ -24,7 +24,7 @@ import com.example.hp.mycampus.model.Information;
 import com.example.hp.mycampus.model.Lesson;
 import com.example.hp.mycampus.model.Score;
 
-public class InfoUtil {
+public class  InfoUtil {
 
     private final static String url_safecode = "http://210.42.121.241/servlet/GenImg"; // 验证码
     private final static String url_login = "http://210.42.121.241/servlet/Login"; // 登录
