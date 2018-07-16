@@ -25,6 +25,7 @@
         <activity android:name=".activity.AddTimeActivity" />
         <activity android:name=".activity.TimeActivity" />
         <activity android:name=".activity.NewsShowActivity" />
+        <activity android:name=".activity.CampusCardActivity" />
         <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

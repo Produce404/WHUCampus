@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private CardView select_score;
     private CardView select_news;
     private CardView select_lost;
+    private CardView select_post;
+    private CardView select_card;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,9 +79,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //设置失物招领按钮的监听
-        select_lost=(CardView) findViewById(R.id.post);
-        select_lost.setOnClickListener(new View.OnClickListener() {
+        //设置快递按钮的监听
+        select_post=(CardView) findViewById(R.id.post);
+        select_post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //跳转
@@ -95,6 +97,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //跳转
                 Intent intent = new Intent(MainActivity.this, TimeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //设置证件卡务按钮的监听
+        select_card=(CardView) findViewById(R.id.card);
+        select_card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //跳转
+                Intent intent = new Intent(MainActivity.this, CampusCardActivity.class);
                 startActivity(intent);
             }
         });

@@ -266,7 +266,7 @@ public class  InfoUtil {
 
     private static ArrayList<Score> dealWithScores() {
         ArrayList<Score> scores = new ArrayList<>();
-        Response res;
+        Response res = null;
         try {
             res = Jsoup.connect("http://210.42.121.241/stu/stu_score_parent.jsp").cookies(cookies)
                     .ignoreContentType(true).method(Method.GET).execute();
@@ -329,7 +329,7 @@ public class  InfoUtil {
 
             s = s.substring(s.indexOf("</tr>"));
 
-            Score _score = new Score(id, name, lessonType, credit, teacher, place, type, year, semester, score);
+            Score _score = new Score(year,semester,name,score);
             scores.add(_score);
         }
         return scores;

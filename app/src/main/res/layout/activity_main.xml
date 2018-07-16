@@ -233,7 +233,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_gravity="left"
                     android:textSize="18dp"
-                    android:text="期末倒计时" />
+                    android:text="学习备忘录" />
                 <ImageView
                     android:id="@+id/iv_pic4"
                     android:layout_width="75dp"
@@ -247,6 +247,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/linearLayout8"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:orientation="vertical"
@@ -323,7 +324,7 @@
                     android:id="@+id/textView25"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
-                    android:text="还想看更多？点我点我~"
+                    android:text="点我可查看快递信息喔~"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="20dp"
                     android:textSize="12dp"/>
@@ -336,7 +337,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_gravity="left"
                     android:textSize="18dp"
-                    android:text="更多" />
+                    android:text="快递信息" />
 
                 <ImageView
                     android:id="@+id/iv_pic6"
@@ -345,7 +346,111 @@
                     android:layout_gravity="right"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/main_pic6" />
+                    android:src="@drawable/main_pic8" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true"
+                android:layout_margin="5dp"
+                tools:targetApi="LOLLIPOP"
+                android:clickable="true"
+                android:stateListAnimator="@drawable/lift_on_touch"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="丢东西了吗？来看看吧~"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="90dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="left"
+                    android:textSize="18dp"
+                    android:text="证件卡务" />
+
+                <ImageView
+                    android:id="@+id/iv_pic7"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/main_pic7" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/library"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true"
+                android:layout_margin="5dp"
+                tools:targetApi="LOLLIPOP"
+                android:clickable="true"
+                android:stateListAnimator="@drawable/lift_on_touch"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="查看图书馆？点我点我~"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="90dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="left"
+                    android:textSize="18dp"
+                    android:text="图书馆" />
+
+                <ImageView
+                    android:id="@+id/iv_pic8"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/main_pic9" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
 
