@@ -55,7 +55,6 @@ public class CourseActivity extends AppCompatActivity {
 
         createLeftView();
 
-
         new Handler().postDelayed(new Runnable() {
 
             @Override
@@ -221,6 +220,8 @@ public class CourseActivity extends AppCompatActivity {
                 break;
             case R.id.lesson_import:
                 //登陆后获取爬取的课程信息
+                delete();
+                this.recreate();
                 ArrayList<Lesson> lessons =InfoUtil.getLessons();
                 for(Lesson lesson : lessons){
                     //创建课程表视图
@@ -229,13 +230,16 @@ public class CourseActivity extends AppCompatActivity {
                     saveData(lesson);}
                 break;
             case R.id.delete_all:
-                SQLiteDatabase sqLiteDatabase =  databaseHelper.getWritableDatabase();
-                sqLiteDatabase.execSQL("delete from lessons");
+                delete();
                 Toast.makeText(this,"Delete !!!",Toast.LENGTH_SHORT).show();
                 this.recreate();
                 break;
         }
         return true;
+    }
+    private void delete(){
+        SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
+        sqLiteDatabase.execSQL("delete from lessons");
     }
 
 }
