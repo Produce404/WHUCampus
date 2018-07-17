@@ -23,7 +23,6 @@ public class AddCourseActivity extends Activity {
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         setContentView(R.layout.activity_add_course);
 
-
         final EditText inputcourseName = (EditText) findViewById(R.id.course_name);
         final EditText inputTeacher = (EditText) findViewById(R.id.teacher_name);
         final EditText inputClassRoom = (EditText) findViewById(R.id.class_room);
@@ -50,7 +49,6 @@ public class AddCourseActivity extends Activity {
                     Intent intent = new Intent(AddCourseActivity.this, CourseActivity.class);
                     //传递实例
                     intent.putExtra("lessons",lesson);
-
                     setResult(0, intent);
                     finish();
                 }

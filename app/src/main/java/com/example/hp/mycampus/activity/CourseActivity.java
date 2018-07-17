@@ -30,25 +30,17 @@ import java.util.ArrayList;
 
 public class CourseActivity extends AppCompatActivity {
 
-    //星期几，使用相对布局
     private RelativeLayout day;
-
-    //SQLite Helper类
-    private LessonDatabaseHelper databaseHelper = new LessonDatabaseHelper
-            (this, "database.db", null, 1);
-    //每节课的高度
+    private LessonDatabaseHelper databaseHelper = new LessonDatabaseHelper(this, "database.db", null, 1);
     private int course_height;
+    private int currentcoursesNumber = 0;
+    private int maxcoursesNumber = 13;
 
-    //最少课程数
-    int currentcoursesNumber = 0;
-    //最大课程数
-    int maxcoursesNumber = 13;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
 
-        //工具条
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("课程表");
         setSupportActionBar(toolbar);
@@ -63,16 +55,22 @@ public class CourseActivity extends AppCompatActivity {
                 course_height=leftViewLayout.getHeight()/13;
                 loadData();
             }
-        }, 100);    //延时1s执行
-        //从数据库读取数据
-
+        }, 100);    //延时1s执行，解决获取不到高度的问题
     }
 
     //从数据库加载数据
+    /**
+    * @Description: 从数据库加载数据
+    * @Param:
+    * @return:
+    * @Author: SPG
+    * @Date: 2018/7/17 
+    */
     private void loadData() {
-        ArrayList<Lesson> lessonsList = new ArrayList<>(); //课程列表
-        SQLiteDatabase sqLiteDatabase =  databaseHelper.getWritableDatabase();//从helper中获得数据库
-        //游标，表示每一行的集合
+        //数组保存所有的客户课程信息
+        ArrayList<Lesson> lessonsList = new ArrayList<>();
+        //获取数据库，并进行查询操作
+        SQLiteDatabase sqLiteDatabase =  databaseHelper.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("select * from lessons", null);
         if (cursor.moveToFirst()) {
             do {
@@ -86,15 +84,20 @@ public class CourseActivity extends AppCompatActivity {
             } while(cursor.moveToNext());
         }
         cursor.close();
-
         //使用从数据库读取出来的课程信息来加载课程表视图
         for (Lesson lesson : lessonsList) {
-            //createLeftView(lesson);//课程节数视图
             createcourseView(lesson);//课程视图
         }
     }
 
     //保存数据到数据库  1.打开数据库2.执行SQL语句
+    /** 
+    * @Description: 保存课程数据到数据库：1.打开数据库2.执行insert语句将对象属性存入
+    * @Param:  lesson
+    * @return:  
+    * @Author: SPG
+    * @Date: 2018/7/17  
+    */ 
     private void saveData(Lesson lesson) {
         //当数据库不可写入时，getReadableDatabase()以只读的方式打开数据库，而getWritableDatabase()会出现异常
         SQLiteDatabase sqLiteDatabase =  databaseHelper.getWritableDatabase();
@@ -109,40 +112,33 @@ public class CourseActivity extends AppCompatActivity {
                                 lesson.getEndTime()+""}
                 );
     }
-    //创建课程节数视图
+
+    /** 
+    * @Description: 创建课程节数的视图（每一个小块课程）
+    * @Param:  
+    * @return:  
+    * @Author: SPG
+    * @Date: 2018/7/17  
+    */
     private void createLeftView() {
         for (int i = 0;i<maxcoursesNumber;i++){
             View view = LayoutInflater.from(this).inflate(R.layout.left_view,null);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(100,0,1);
             view.setLayoutParams(params);
-
             TextView textView = view.findViewById(R.id.class_number_text);
             textView.setText(String.valueOf(++currentcoursesNumber));
             LinearLayout leftViewLayout = (LinearLayout) findViewById(R.id.left_view_layout);
             leftViewLayout.addView(view);
         }
-        /*int len = lesson.getEnd();//获取所有课程最后一节课是多少节课
-        if (len > maxcoursesNumber) {
-            for (int i = 0; i < len-maxcoursesNumber; i++) {
-                //LayoutInflater为布局服务，LayoutInflater.from.inflate()加载布局
-                View view = LayoutInflater.from(this).inflate(R.layout.left_view, null);
-                //LayoutParams设置相关的属性，宽和高
-                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(110,300);//180
-                //应用上一行所设置的属性
-                view.setLayoutParams(params);
-                //设置TextView的属性值，从0开始，一直到最大结课时间
-                TextView text = view.findViewById(R.id.class_number_text);
-                text.setText(String.valueOf(++currentcoursesNumber));
-
-                LinearLayout leftViewLayout = findViewById(R.id.left_view_layout);
-                //把当前的视图加到线性布局中去
-                leftViewLayout.addView(view);
-            }
-        }*/
-        //maxcoursesNumber = len;
     }
 
-    //创建课程视图
+    /**
+    * @description: 创建课表视图
+    * @param:  lesson
+    * @return:
+    * @author: SPG
+    * @date: 2018/7/17  15:52
+    */
     private void createcourseView(final Lesson lesson) {
         //获取课程是星期几
         int nowDay = Integer.valueOf(lesson.getDay());
@@ -170,7 +166,6 @@ public class CourseActivity extends AppCompatActivity {
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams
                     //宽适应原布局单元的大小，布局高度为（占的课时*每个课时占的高度）
                     (ViewGroup.LayoutParams.MATCH_PARENT,(class_end-class_start+1)*course_height - 8,1); //设置布局高度,即跨多少节课
-            //(ViewGroup.LayoutParams.MATCH_PARENT,cours4wwe_height);
             v.setLayoutParams(params);//属性绑定
             TextView text = v.findViewById(R.id.text_view);
             text.setText(lesson.getLessonName() + "\n" + lesson.getTeacherName() + "\n" +"@"+ lesson.getClassRoom()); //显示课程名
@@ -194,7 +189,14 @@ public class CourseActivity extends AppCompatActivity {
             });
         }
     }
-    //获取创建课表中的course实例
+
+    /**
+    * @description: 获取创建课表界面中的lesson,并添加进课表界面中去
+    * @param: requestCode resultCode data
+    * @return:
+    * @author: SPG
+    * @date: 2018/7/17  15:54
+    */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode == 0 && resultCode == 0 && data != null){
@@ -204,7 +206,6 @@ public class CourseActivity extends AppCompatActivity {
         }
 
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.lesson_toolbar, menu);
@@ -237,6 +238,14 @@ public class CourseActivity extends AppCompatActivity {
         }
         return true;
     }
+    
+    /** 
+    * @description: 从数据库中将当前所有的课程信息全部删除
+    * @param:  
+    * @return:
+    * @author: SPG
+    * @date: 2018/7/17 16:00
+    */ 
     private void delete(){
         SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
         sqLiteDatabase.execSQL("delete from lessons");
