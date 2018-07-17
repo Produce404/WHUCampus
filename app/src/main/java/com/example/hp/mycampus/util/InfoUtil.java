@@ -40,10 +40,12 @@ public class  InfoUtil {
     private static Information information;
 
     public static ArrayList<Lesson> getLessons() {
+        lessons = dealWithLessons(url_lessons);
         return lessons;
     }
 
     public static ArrayList<Score> getScores() {
+        scores = dealWithScores();
         return scores;
     }
 
@@ -52,10 +54,13 @@ public class  InfoUtil {
     }
 
     public static Information getInformation() {
+        information = dealWithInformation();
         return information;
     }
 
     public static ArrayList<ChooseLessonItem> getChooseLessonItems() {
+        if (chooseLessonItems.isEmpty())
+            chooseLessonItems = dealWithChoosingLeson();
         return chooseLessonItems;
     }
 
@@ -122,14 +127,6 @@ public class  InfoUtil {
                 url = url.substring(0, url.indexOf("'"));
 
                 url_lessons = "http://210.42.121.241" + url+"&year=2018&term=%C9%CF";
-
-                    lessons = dealWithLessons(url_lessons);
-                if (scores.isEmpty())
-                    scores = dealWithScores();
-                if (information == null)
-                    information = dealWithInformation();
-                if (chooseLessonItems.isEmpty())
-                    chooseLessonItems = dealWithChoosingLeson();
                 return true;
             } else {
                 if (!result.contains("对不起，您无权访问当前页面")) { // 登录失败
