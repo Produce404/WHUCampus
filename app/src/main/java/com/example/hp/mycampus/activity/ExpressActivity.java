@@ -15,12 +15,11 @@ public class ExpressActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_express);
-
+        //建立Webview指向快递查询
         WebView webView = (WebView) findViewById(R.id.express_view);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
-        //webView.loadUrl("http://www.baidu.com");
-        webView.loadUrl("https://m.kuaidi100.com/app/");
+        webView.loadUrl("https://m.ickd.cn/");
 
     }
     @Override

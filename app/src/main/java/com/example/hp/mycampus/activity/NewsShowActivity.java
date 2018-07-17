@@ -65,12 +65,8 @@ public class NewsShowActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.like_menu:
-                Intent intent = new Intent(NewsShowActivity.this, AddCourseActivity.class);
-                startActivityForResult(intent, 0);
                 break;
             case R.id.collect_menu:
-                Intent intent1 = new Intent(NewsShowActivity.this, FillActivity.class);
-                startActivityForResult(intent1, 1);
                 break;
         }
         return true;
