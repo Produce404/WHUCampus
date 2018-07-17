@@ -326,7 +326,7 @@ public class  InfoUtil {
 
             s = s.substring(s.indexOf("</tr>"));
 
-            Score _score = new Score(year,semester,name,score);
+            Score _score = new Score(year,semester,name,credit,score);
             scores.add(_score);
         }
         return scores;

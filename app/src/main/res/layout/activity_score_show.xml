@@ -35,9 +35,18 @@
             android:gravity="center"
             android:text="课程名称"
             android:textColor="#75b7a0"/>
-
         <TextView
             android:layout_width="40dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+            android:layout_weight="0"
+            android:gravity="right"
+            android:text="学分"
+            android:textColor="#75b7a0"/>
+
+        <TextView
+            android:layout_width="43dp"
             android:layout_height="wrap_content"
 
             android:layout_marginTop="5dp"

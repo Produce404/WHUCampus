@@ -42,6 +42,7 @@ public class ScoreShowActivity extends AppCompatActivity {
                         cursor.getString(cursor.getColumnIndex("year")),
                         cursor.getString(cursor.getColumnIndex("semester")),
                         cursor.getString(cursor.getColumnIndex("name")),
+                        cursor.getString(cursor.getColumnIndex("credit")),
                         cursor.getString(cursor.getColumnIndex("score"))));
             } while(cursor.moveToNext());
         }
@@ -50,15 +51,15 @@ public class ScoreShowActivity extends AppCompatActivity {
         ScoreAdapter adapter = new ScoreAdapter(this,R.layout.score_layout,scoresList);
         listView1.setAdapter(adapter);
 
+        //删除数据
         deleteTable(sqLiteDatabase);
     }
-
 
     //清空scores表
     public void deleteTable(SQLiteDatabase db){
         db.execSQL("delete from scores");
     }
-    
+
     private void getResult(){
         Intent intent = getIntent();
         ArrayList<Score> scores =  (ArrayList<Score>) intent.getSerializableExtra("scores");
@@ -73,10 +74,11 @@ public class ScoreShowActivity extends AppCompatActivity {
         SQLiteDatabase sqLiteDatabase =  databaseHelper02.getWritableDatabase();
         //执行SQL语句
         sqLiteDatabase.execSQL
-                ("insert into scores(year, semester, name, score) " + "values(?, ?, ?, ?)",
+                ("insert into scores(year, semester, name, credit, score) " + "values(?, ?, ?, ?, ?)",
                         new String[] {score.getYear(),
                                 score.getSemester(),
                                 score.getName(),
+                                score.getCredit(),
                                 score.getScore()+""}
                 );
     }

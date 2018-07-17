@@ -27,7 +27,7 @@ public class LoginActivity extends Activity {
     private EditText ed_code;
     private int mode=0;//网络连接控制
 
-    //消息控制
+    //消息控制器
     private Handler handler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -105,18 +105,19 @@ public class LoginActivity extends Activity {
                                 LoginActivity.this.username = ed_username.getText().toString().trim();
                                 LoginActivity.this.password = ed_password.getText().toString().trim();
                                 LoginActivity.this.code = ed_code.getText().toString().trim();
+                                //登陆操作
                                 if (InfoUtil.Login(LoginActivity.this.username, LoginActivity.this.password, LoginActivity.this.code)) {
                                     Message msg = handler.obtainMessage();
                                     msg.arg1 = 1;
-                                    handler.sendMessage(msg);
+                                    handler.sendMessage(msg);//提示登陆成功
                                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                     mode=0;
                                     startActivity(intent);
                                 } else {
-                                    System.out.println(InfoUtil.getReason());
                                     Message msg = handler.obtainMessage();
                                     msg.arg1 = 0;
-                                    handler.sendMessage(msg);
+                                    handler.sendMessage(msg);//提示错误信息
+                                    //重新获取验证码
                                     InfoUtil.getVerificationCode();
                                     String img_path = "data/data/com.example.hp.mycampus/safecode.png";
                                     Bitmap bmp= BitmapFactory.decodeFile(img_path);
@@ -140,20 +141,26 @@ public class LoginActivity extends Activity {
     }
 }
 
-//┏┓　　　┏┓
-//┏┛┻━━━┛┻┓
-//┃　　　　　　　┃ 　
-//┃　　　━　　　┃
-//┃　┳┛　┗┳　┃
-//┃　　　　　　　┃
-//┃　　　┻　　　┃
-//┃　　　　　　　┃
-//┗━┓　　　┏━┛
-//┃　　　┃  神兽保佑　　　　　　　　
-//┃　　　┃  代码无BUG！
-//┃　　　┗━━━┓
-//┃　　　　　　　┣┓
-//┃　　　　　　　┏┛
-//┗┓┓┏━┳┓┏┛
-// ┃┫┫　┃┫┫
-// ┗┻┛　┗┻┛
+/**
+ *
+ * ━━━━━━神兽出没━━━━━━
+ * 　　　┏┓　　　┏┓
+ * 　　┏┛┻━━━┛┻┓
+ * 　　┃　　　　　　　┃
+ * 　　┃　　　━　　　┃
+ * 　　┃　┳┛　┗┳　┃
+ * 　　┃　　　　　　　┃
+ * 　　┃　　　┻　　　┃
+ * 　　┃　　　　　　　┃
+ * 　　┗━┓　　　┏━┛Code is far away from bug with the animal protecting
+ * 　　　　┃　　　┃    神兽保佑,代码无bug
+ * 　　　　┃　　　┃
+ * 　　　　┃　　　┗━━━┓
+ * 　　　　┃　　　　　　　┣┓
+ * 　　　　┃　　　　　　　┏┛
+ * 　　　　┗┓┓┏━┳┓┏┛
+ * 　　　　　┃┫┫　┃┫┫
+ * 　　　　　┗┻┛　┗┻┛
+ *
+ * ━━━━━━感觉萌萌哒━━━━━━
+ */

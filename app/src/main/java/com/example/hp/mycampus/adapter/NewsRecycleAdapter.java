@@ -79,15 +79,13 @@ public class NewsRecycleAdapter extends RecyclerView.Adapter<NewsRecycleAdapter.
     // RecycleView的特点之一，必须是自定义viewholder
     class ViewHolder extends RecyclerView.ViewHolder{
 
-        CardView cardView; // 这个是为了之后可以添加点击事件
+        CardView cardView; //这个是为了之后可以添加点击事件
         ImageView imageView;
         TextView name;
         TextView descrip;
-        private MyItemClickListener mListener;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            // 和平时写viewholder是一样的
             cardView = (CardView) itemView.findViewById(R.id.cv_item);
             imageView = (ImageView) itemView.findViewById(R.id.iv_pic);
             name = (TextView) itemView.findViewById(R.id.tv_name);

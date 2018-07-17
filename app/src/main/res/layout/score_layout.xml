@@ -24,6 +24,11 @@
         android:ellipsize="end"
         android:layout_columnWeight="1"/>
     <TextView
+        android:layout_width="37dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewCredit"
+        android:layout_columnWeight="0"/>
+    <TextView
         android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:id="@+id/textViewScore"
