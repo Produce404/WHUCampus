@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private CardView select_lost;
     private CardView select_post;
     private CardView select_card;
+    private CardView select_library;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +109,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //跳转
                 Intent intent = new Intent(MainActivity.this, CampusCardActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //设置图书馆历史借阅信息查询按钮的监听
+        select_library=(CardView)findViewById(R.id.library);
+        select_card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //跳转
+                Intent intent = new Intent(MainActivity.this, LibraryActivity.class);
                 startActivity(intent);
             }
         });

@@ -139,4 +139,15 @@ public class Book {
                 + ", lastRenewalDate=" + lastRenewalDate + ", number=" + number + "]";
     }
 
+    public Book(String author, String title, String year, String shouldReturnDate, String shouldReturnTime, String returnDate, String returnTime, String branch,String fine) {
+        this.author = author;
+        this.title = title;
+        this.year = year;
+        this.shouldReturnDate = shouldReturnDate;
+        this.shouldReturnTime = shouldReturnTime;
+        this.returnDate = returnDate;
+        this.returnTime = returnTime;
+        this.branch = branch;
+        this.fine=fine;
+    }
 }

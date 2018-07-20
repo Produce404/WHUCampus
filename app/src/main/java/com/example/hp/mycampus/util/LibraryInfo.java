@@ -118,8 +118,9 @@ public class LibraryInfo {
             s = s.substring(s.indexOf("<td") + 3);
             String branch = s.substring(s.indexOf(">") + 1, s.indexOf("</td>"));
 
-            Book book = new Book(author, title, year, shouldReturnDate, shouldReturnTime, returnDate, returnTime, fine, branch, moreInfo[0], moreInfo[1], moreInfo[2]);
+            //Book book = new Book(author, title, year, shouldReturnDate, shouldReturnTime, returnDate, returnTime, fine, branch, moreInfo[0], moreInfo[1], moreInfo[2]);
             //Book book = new Book(title);
+            Book  book = new Book(author,title,year,shouldReturnDate,shouldReturnTime,returnDate,returnTime,branch,fine);
             list.add(book);
         }
         return list;
