@@ -1,10 +1,7 @@
 package com.example.hp.mycampus.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.BitmapFactory;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,7 +88,6 @@ public class TimeRecycleAdapter extends RecyclerView.Adapter<TimeRecycleAdapter.
 
         public ViewHolder(View itemView) {
             super(itemView);
-            // 和平时写viewholder是一样的
             cardView = (CardView) itemView.findViewById(R.id.cv_item);
             name = (TextView) itemView.findViewById(R.id.name);
             date = (TextView) itemView.findViewById(R.id.date);

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 import com.example.hp.mycampus.adapter.ScoreAdapter;
 import com.example.hp.mycampus.model.Score;
-import com.example.hp.mycampus.util.DatabaseHelper02;
+import com.example.hp.mycampus.util.ScoreDatabaseHelper;
 import com.example.hp.mycampus.R;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ScoreShowActivity extends AppCompatActivity {
 
     //SQLite Helper类
-    private DatabaseHelper02 databaseHelper02 = new DatabaseHelper02
+    private ScoreDatabaseHelper scoreDatabaseHelper = new ScoreDatabaseHelper
             (this, "database02.db", null, 1);
 
 
@@ -33,7 +33,7 @@ public class ScoreShowActivity extends AppCompatActivity {
 
         //从数据库读取数据
         ArrayList<Score> scoresList = new ArrayList<>(); //成绩列表
-        SQLiteDatabase sqLiteDatabase =  databaseHelper02.getWritableDatabase();//从helper中获得数据库
+        SQLiteDatabase sqLiteDatabase =  scoreDatabaseHelper.getWritableDatabase();//从helper中获得数据库
         //游标，表示每一行的集合
         Cursor cursor = sqLiteDatabase.rawQuery("select * from scores", null);
         if (cursor.moveToFirst()) {
@@ -71,7 +71,7 @@ public class ScoreShowActivity extends AppCompatActivity {
     //保存数据到数据库  1.打开数据库2.执行SQL语句
     private void saveData(Score score) {
         //当数据库不可写入时，getReadableDatabase()以只读的方式打开数据库，而getWritableDatabase()会出现异常
-        SQLiteDatabase sqLiteDatabase =  databaseHelper02.getWritableDatabase();
+        SQLiteDatabase sqLiteDatabase =  scoreDatabaseHelper.getWritableDatabase();
         //执行SQL语句
         sqLiteDatabase.execSQL
                 ("insert into scores(year, semester, name, credit, score) " + "values(?, ?, ?, ?, ?)",

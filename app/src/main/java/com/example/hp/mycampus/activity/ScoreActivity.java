@@ -3,7 +3,6 @@ package com.example.hp.mycampus.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -83,7 +82,6 @@ public class ScoreActivity extends Activity {
                         }
                     }
                 }
-                //System.out.println(newScores);
 
                 //跳转
                 Intent intent = new Intent(ScoreActivity.this, ScoreShowActivity.class);

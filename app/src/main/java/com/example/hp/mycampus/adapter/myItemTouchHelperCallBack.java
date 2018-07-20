@@ -5,7 +5,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class myItemTouchHelperCallBack extends ItemTouchHelper.Callback{
     private ItemTouchHelperAdapter itemTouchHelperAdapter;
-    int flag;
 
     public myItemTouchHelperCallBack(ItemTouchHelperAdapter itemTouchHelperAdapter) {
         this.itemTouchHelperAdapter = itemTouchHelperAdapter;

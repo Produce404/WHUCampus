@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
@@ -19,35 +20,34 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.5"
         android:orientation="vertical">
 
         <EditText
             android:id="@+id/login_username"
             android:layout_width="fill_parent"
-            android:layout_height="30dip"
+            android:layout_height="40dip"
             android:layout_marginLeft="70dip"
             android:layout_marginTop="30dip"
             android:layout_marginRight="70dip"
-            android:background="#ffffef"
             android:hint="用户名"
             android:paddingTop="10dip"
-            android:textSize="18dip">
+            android:textSize="18dip"
+            android:drawableLeft="@drawable/username">
 
         </EditText>
 
         <EditText
             android:id="@+id/login_password"
             android:layout_width="fill_parent"
-            android:layout_height="30dip"
+            android:layout_height="40dip"
             android:layout_marginLeft="70dip"
             android:layout_marginTop="10dip"
             android:layout_marginRight="70dip"
-            android:background="#ffffef"
             android:hint="密码"
             android:paddingTop="10dip"
             android:password="true"
-            android:textSize="18dip">
+            android:textSize="18dip"
+            android:drawableLeft="@drawable/password">
 
         </EditText>
 
@@ -59,14 +59,14 @@
             <EditText
                 android:id="@+id/login_code"
                 android:layout_width="wrap_content"
-                android:layout_height="30dip"
+                android:layout_height="40dip"
                 android:layout_marginLeft="70dip"
                 android:layout_marginTop="10dip"
                 android:layout_marginRight="0dip"
-                android:background="#ffffef"
                 android:hint="验证码"
                 android:paddingTop="10dip"
-                android:textSize="18dip">
+                android:textSize="18dip"
+                android:drawableLeft="@drawable/protect">
 
             </EditText>
 
@@ -79,15 +79,13 @@
                 android:layout_weight="1"
                 />
         </LinearLayout>
-
-
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dip">
+        android:layout_marginTop="0dip">
 
         <CheckBox
             android:id="@+id/cb1"
@@ -97,13 +95,6 @@
             android:layout_marginRight="50dip"
             android:text="记住密码" />
 
-        <CheckBox
-            android:id="@+id/cb2"
-            android:layout_width="100dip"
-            android:layout_height="wrap_content"
-
-            android:layout_marginRight="70dip"
-            android:text="自动登录" />
     </LinearLayout>
 
     <LinearLayout
@@ -118,6 +109,7 @@
             android:layout_height="40dip"
             android:layout_marginLeft="100dip"
             android:layout_marginRight="100dip"
+            android:layout_marginTop="10dip"
             android:background="#5677fc"
             android:textSize="18dp"
             android:text="登录" />

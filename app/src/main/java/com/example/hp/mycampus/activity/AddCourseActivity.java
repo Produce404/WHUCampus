@@ -1,7 +1,5 @@
 package com.example.hp.mycampus.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;

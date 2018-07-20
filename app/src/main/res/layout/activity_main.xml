@@ -76,7 +76,7 @@
 
                 <TextView
                     android:id="@+id/textView20"
-                    android:layout_width="75dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:text="成绩不理想？该努力了！"
                     android:layout_marginLeft="8dp"
@@ -111,7 +111,7 @@
 
                 <TextView
                     android:id="@+id/textView21"
-                    android:layout_width="75dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:text="上课好助手~点我点我~"
                     android:layout_marginLeft="8dp"
@@ -174,7 +174,7 @@
 
                 <TextView
                     android:id="@+id/textView22"
-                    android:layout_width="75dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:text="校内新资讯~各种通知哦~"
                     android:layout_marginLeft="8dp"
@@ -218,7 +218,7 @@
 
                 <TextView
                     android:id="@+id/textView23"
-                    android:layout_width="75dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:text="该复习了吗？我来告诉你~"
                     android:layout_marginLeft="8dp"
@@ -278,7 +278,7 @@
 
                 <TextView
                     android:id="@+id/textView24"
-                    android:layout_width="75dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:text="丢东西了吗？来看看吧~"
                     android:layout_marginLeft="8dp"
@@ -322,7 +322,7 @@
 
                 <TextView
                     android:id="@+id/textView25"
-                    android:layout_width="75dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:text="点我可查看快递信息喔~"
                     android:layout_marginLeft="8dp"
@@ -382,15 +382,15 @@
 
                 <TextView
                     android:id="@+id/textView26"
-                    android:layout_width="75dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
-                    android:text="丢东西了吗？来看看吧~"
+                    android:text="校园卡增值服务全在这里~"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="20dp"
                     android:textSize="12dp"/>
 
                 <TextView
-                    android:id="@+id/textView27"
+                    android:id="@+id/textView30"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="90dp"
@@ -426,7 +426,7 @@
 
                 <TextView
                     android:id="@+id/textView28"
-                    android:layout_width="75dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:text="查看图书馆？点我点我~"
                     android:layout_marginLeft="8dp"
