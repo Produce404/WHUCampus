@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.example.hp.mycampus.R;
 import com.example.hp.mycampus.model.Book;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,7 +38,7 @@ public class LibraryAdapter extends RecyclerView.Adapter<LibraryAdapter.ViewHold
         }
     }
 
-    public LibraryAdapter(List<Book> bookList){
+    public LibraryAdapter(ArrayList<Book> bookList){
         mbook = bookList;
     }
 

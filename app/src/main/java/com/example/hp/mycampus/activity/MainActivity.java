@@ -115,11 +115,11 @@ public class MainActivity extends AppCompatActivity {
 
         //设置图书馆历史借阅信息查询按钮的监听
         select_library=(CardView)findViewById(R.id.library);
-        select_card.setOnClickListener(new View.OnClickListener() {
+        select_library.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //跳转
-                Intent intent = new Intent(MainActivity.this, LibraryActivity.class);
+                Intent intent = new Intent(MainActivity.this, LibraryLoginActivity.class);
                 startActivity(intent);
             }
         });

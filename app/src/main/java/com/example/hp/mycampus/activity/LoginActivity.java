@@ -19,7 +19,7 @@ import com.example.hp.mycampus.R;
 import com.example.hp.mycampus.util.InfoUtil;
 
 public class LoginActivity extends Activity {
-    private String username;
+    public static String username;
     private String password;
     private String code;
     private EditText ed_username;
