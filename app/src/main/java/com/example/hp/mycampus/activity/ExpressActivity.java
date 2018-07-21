@@ -3,18 +3,34 @@ package com.example.hp.mycampus.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.example.hp.mycampus.R;
 
-public class ExpressActivity extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+public class ExpressActivity extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_express);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("查快递");
+        toolbar.setNavigationIcon(R.drawable.btn_back);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                finish();
+            }
+        });
+
         //建立Webview指向快递查询
         WebView webView = (WebView) findViewById(R.id.express_view);
         webView.getSettings().setJavaScriptEnabled(true);
