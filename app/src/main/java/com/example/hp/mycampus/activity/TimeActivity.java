@@ -13,6 +13,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.hp.mycampus.R;
 import com.example.hp.mycampus.adapter.TimeRecycleAdapter;
@@ -42,6 +43,15 @@ public class TimeActivity extends AppCompatActivity {
         //工具条
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.btn_back);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(TimeActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
         //获取对象
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         //设定布局管理

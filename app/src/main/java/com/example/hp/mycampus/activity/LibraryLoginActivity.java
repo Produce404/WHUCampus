@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 /**
  * A login screen that offers login via email/password.
@@ -41,6 +42,18 @@ public class LibraryLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library_login);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("图书馆登录");
+        toolbar.setNavigationIcon(R.drawable.btn_back);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(LibraryLoginActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         studentNum = (EditText)findViewById(R.id.studnetNum);
         password = (EditText) findViewById(R.id.password);
