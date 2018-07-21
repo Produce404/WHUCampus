@@ -79,8 +79,8 @@ public class AddTimeActivity extends Activity
                     e.printStackTrace();
                 }
                 int days= differentDaysByMillisecond(date1,date2);
-                    String countDown=String.valueOf(days);
-                    Toast.makeText(AddTimeActivity.this,"还剩"+days+"天", Toast.LENGTH_LONG).show();
+                String countDown=String.valueOf(days);
+                Toast.makeText(AddTimeActivity.this,"还剩"+days+"天", Toast.LENGTH_LONG).show();
 
                 if (name.equals("") || date.equals("") ) {
                     Toast.makeText(AddTimeActivity.this, "基本信息未填写", Toast.LENGTH_SHORT).show();
