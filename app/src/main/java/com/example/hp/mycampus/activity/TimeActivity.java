@@ -48,8 +48,7 @@ public class TimeActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(TimeActivity.this,MainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
         //获取对象
@@ -98,13 +97,8 @@ public class TimeActivity extends AppCompatActivity {
             sqLiteDatabase.execSQL("insert into time(name,date,countDown) " + "values(?, ?,?)",
                     new String[] {name, date,countDown});
             loadData();
-            refresh();
+            this.recreate();
         }
-    }
-
-    public void refresh() {
-        Intent intent = new Intent(TimeActivity.this, TimeActivity.class);
-        startActivity(intent);
     }
 
     @Override
