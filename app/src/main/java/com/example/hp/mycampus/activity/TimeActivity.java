@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -13,6 +14,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.hp.mycampus.R;
 import com.example.hp.mycampus.adapter.TimeRecycleAdapter;
@@ -42,6 +44,17 @@ public class TimeActivity extends AppCompatActivity {
         //工具条
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.btn_back);
+        //设置监听器
+        toolbar.setNavigationOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(TimeActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
         //获取对象
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         //设定布局管理
