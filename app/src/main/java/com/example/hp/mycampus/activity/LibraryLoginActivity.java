@@ -65,13 +65,18 @@ public class LibraryLoginActivity extends AppCompatActivity {
 
                 LibraryInfo.Login(stn,psd);
 
+                bookList = LibraryInfo.getHistoryList();
 
                 if (LibraryInfo.Login(stn,psd)){
-                    Intent intent = new Intent(LibraryLoginActivity.this, LibraryActivity.class);
-                    startActivity(intent);
+                    if (bookList.isEmpty()) {
+                        Intent intent_null = new Intent(LibraryLoginActivity.this, NoticeActivity.class);
+                        startActivity(intent_null);
+                    }else {
+                        Intent intent = new Intent(LibraryLoginActivity.this, LibraryActivity.class);
+                        startActivity(intent);
+                    }
                 }else
                     Toast.makeText(LibraryLoginActivity.this,"密码输入错误",Toast.LENGTH_SHORT).show();
-
             }
         });
     }

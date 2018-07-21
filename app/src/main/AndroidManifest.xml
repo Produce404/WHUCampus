@@ -32,7 +32,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".activity.CourseActivity" />
         <activity
@@ -40,10 +39,9 @@
             android:label="新建课程"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity android:name=".activity.LostActivity" />
-        <activity android:name=".activity.LibraryActivity"></activity>
-        <activity android:name=".activity.LibraryLoginActivity">
-
-        </activity>
+        <activity android:name=".activity.LibraryActivity" />
+        <activity android:name=".activity.LibraryLoginActivity"/>
+        <activity android:name=".activity.NoticeActivity"/>
     </application>
 
 </manifest>
