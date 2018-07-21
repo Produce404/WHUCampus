@@ -69,7 +69,11 @@ public class TimeRecycleAdapter extends RecyclerView.Adapter<TimeRecycleAdapter.
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.name.setText(list.get(position).getName());
-        holder.date.setText(list.get(position).getDate());
+        holder.date.setText("计划时间:"+list.get(position).getDate());
+        holder.countdown.setText("还剩"+list.get(position).getCountDown()+"天");
+        if(Integer.parseInt(list.get(position).getCountDown())<=10) {
+            holder.countdown.setTextColor(android.graphics.Color.RED);
+        }
         // 点击事件也可以写在这里
         holder.cardView.setTag(position);
     }
@@ -85,12 +89,14 @@ public class TimeRecycleAdapter extends RecyclerView.Adapter<TimeRecycleAdapter.
         CardView cardView; // 这个是为了之后可以添加点击事件
         TextView name;
         TextView date;
+        TextView countdown;
 
         public ViewHolder(View itemView) {
             super(itemView);
             cardView = (CardView) itemView.findViewById(R.id.cv_item);
             name = (TextView) itemView.findViewById(R.id.name);
             date = (TextView) itemView.findViewById(R.id.date);
+            countdown = (TextView) itemView.findViewById(R.id.countdown);
         }
     }
 

@@ -7,12 +7,4 @@
         android:orderInCategory="2"
         app:showAsAction="always"
         android:title="@string/context_menu" />
-    <item
-        android:id="@+id/collect_menu"
-        android:icon="@drawable/icn_4"
-        android:orderInCategory="2"
-        app:showAsAction="always"
-        android:title="@string/context_menu" />
-
-
     </menu>

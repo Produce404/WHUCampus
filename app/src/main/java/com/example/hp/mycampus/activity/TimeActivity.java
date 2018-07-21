@@ -67,7 +67,8 @@ public class TimeActivity extends AppCompatActivity {
             do {
                 list.add(new Time(
                         cursor.getString(cursor.getColumnIndex("name")),
-                        cursor.getString(cursor.getColumnIndex("date"))
+                        cursor.getString(cursor.getColumnIndex("date")),
+                        cursor.getString(cursor.getColumnIndex("countdown"))
                        ));
             } while(cursor.moveToNext());
         }
@@ -83,8 +84,9 @@ public class TimeActivity extends AppCompatActivity {
             //执行SQL语句
             String name=time_single.getName();
             String date=time_single.getDate();
-            sqLiteDatabase.execSQL("insert into time(name,date) " + "values(?, ?)",
-                    new String[] {name, date});
+            String countDown=time_single.getCountDown();
+            sqLiteDatabase.execSQL("insert into time(name,date,countDown) " + "values(?, ?,?)",
+                    new String[] {name, date,countDown});
             loadData();
             refresh();
         }

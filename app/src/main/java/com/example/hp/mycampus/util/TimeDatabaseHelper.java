@@ -14,7 +14,8 @@ public class TimeDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("create table time(" +
                 "id integer primary key autoincrement," +
                 "name text," +
-                "date text)");
+                "date text,"+
+                "countdown text)");
     }
 
     @Override

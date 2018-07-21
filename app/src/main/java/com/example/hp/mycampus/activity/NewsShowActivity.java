@@ -3,6 +3,7 @@ package com.example.hp.mycampus.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -70,8 +71,7 @@ public class NewsShowActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.like_menu:
-                break;
-            case R.id.collect_menu:
+                Toast.makeText(NewsShowActivity.this, "点赞成功！", Toast.LENGTH_SHORT).show();
                 break;
         }
         return true;
