@@ -21,13 +21,13 @@ public class LibraryInfo {
         return historyList;
     }
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         Login("2016302580332", "260050");
         // Login("2016302580121", "ZYF760286098");
         System.out.println("123");
         for (Book book : historyList)
             System.out.println(book);
-    }
+    }*/
 
 
     public static boolean Login(String id, String pwd) {

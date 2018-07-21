@@ -64,14 +64,14 @@ public class LibraryLoginActivity extends AppCompatActivity {
                 StrictMode.setThreadPolicy(policy);
 
                 LibraryInfo.Login(stn,psd);
-                bookList=LibraryInfo.getHistoryList();
 
-                if (bookList.isEmpty()){
-                    Toast.makeText(LibraryLoginActivity.this,"密码输入错误",Toast.LENGTH_SHORT).show();
-                }else {
+
+                if (LibraryInfo.Login(stn,psd)){
                     Intent intent = new Intent(LibraryLoginActivity.this, LibraryActivity.class);
                     startActivity(intent);
-                }
+                }else
+                    Toast.makeText(LibraryLoginActivity.this,"密码输入错误",Toast.LENGTH_SHORT).show();
+
             }
         });
     }

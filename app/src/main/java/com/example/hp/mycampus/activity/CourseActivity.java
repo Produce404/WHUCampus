@@ -55,7 +55,7 @@ public class CourseActivity extends AppCompatActivity {
                 course_height=leftViewLayout.getHeight()/13;
                 loadData();
             }
-        }, 100);    //延时1s执行，解决获取不到高度的问题
+        }, 100);    //延时0.1s执行，解决获取不到高度的问题
     }
 
     //从数据库加载数据
